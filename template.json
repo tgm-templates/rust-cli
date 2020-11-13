@@ -1,0 +1,22 @@
+{
+  "name": "rust-cli",
+  "repository": "https://github.com/tgm-templates/rust-cli",
+  "description": "Rust CLI app with clap.rs",
+  "variables": [
+    {
+      "name": "appName",
+      "description": "App name"
+    },
+    {
+      "name": "author_name",
+      "description": "author's name"
+    },
+    {
+      "name": "author_email",
+      "description": "author's email"
+    }
+  ],
+  "files": [
+    "Cargo.toml", "src/app.rs", "README.md"
+  ]
+}
