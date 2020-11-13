@@ -1,7 +1,7 @@
 {
   "name": "rust-cli",
   "repository": "https://github.com/tgm-templates/rust-cli",
-  "description": "Rust CLI app with clap.rs",
+  "description": "Rust CLI app template with clap.rs",
   "variables": [
     {
       "name": "appName",
