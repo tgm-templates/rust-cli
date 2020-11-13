@@ -17,6 +17,6 @@
     }
   ],
   "files": [
-    "Cargo.toml", "src/app.rs", "README.md"
+    "Cargo.toml", "src/app.rs", "README.md", "justfile"
   ]
 }
