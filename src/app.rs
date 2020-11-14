@@ -1,7 +1,7 @@
 //! clap App for command cli
 use clap::{App, Arg};
-use clap_generate::{generate, generators::Zsh};
-use clap_generate::generators::Bash;
+use clap_generate::generate;
+use clap_generate::generators::{Bash, Zsh, Fish};
 use std::env;
 use std::fs::File;
 use std::path::Path;
@@ -28,6 +28,8 @@ pub fn generate_shell_completion(args: &ArgMatches) {
         generate::<Zsh, _>(app, COMMAND, &mut std::io::stdout());
     } else if args.is_present("bash") {
         generate::<Bash, _>(app, COMMAND, &mut std::io::stdout());
+    } else if args.is_present("fish") {
+        generate::<Fish, _>(app, COMMAND, &mut std::io::stdout());
     } else if args.is_present("oh_my_zsh") {
         let home = env::var("HOME").unwrap();
         let dest_dir = format!("{}/.oh-my-zsh/custom/plugins/{}", home, COMMAND);
@@ -70,6 +72,13 @@ fn complete_command() -> App<'static> {
                 .long("bash")
                 .takes_value(false)
                 .about("Bash completion")
+                .required(false),
+        )
+        .arg(
+            Arg::new("fish")
+                .long("fish")
+                .takes_value(false)
+                .about("Fish completion")
                 .required(false),
         )
 }
